@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registrar nuevo usuario</title>
+  <title>Login - Administrador de Productos</title>
 
-  <!-- 🔹 Íconos -->
+  <!-- 🔹 Íconos de Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* 🌈 Fondo animado */
+    /* 🌈 Fondo animado con gradiente */
     body {
       font-family: 'Poppins', 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #00c6ff, #007bff, #4facfe);
+      background: linear-gradient(135deg, #007bff, #00c6ff, #4facfe);
       background-size: 300% 300%;
       animation: gradientMove 8s ease infinite;
       display: flex;
@@ -30,8 +30,8 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* 📦 Contenedor principal */
-    .register-container {
+    /* 🧩 Contenedor principal */
+    .login-container {
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(12px);
       padding: 2.5rem;
@@ -40,11 +40,11 @@
       width: 100%;
       max-width: 360px;
       text-align: center;
-      animation: fadeIn 1s ease;
       transition: all 0.4s ease;
+      animation: fadeIn 1s ease;
     }
 
-    .register-container:hover {
+    .login-container:hover {
       transform: translateY(-6px);
       box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
     }
@@ -54,15 +54,15 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 🧠 Logo */
-    .register-container img {
+    /* 🖼️ Logo */
+    .login-container img {
       width: 95px;
       margin-bottom: 1rem;
       transition: transform 0.4s ease;
     }
 
-    .register-container img:hover {
-      transform: rotate(-5deg) scale(1.05);
+    .login-container img:hover {
+      transform: rotate(5deg) scale(1.05);
     }
 
     h2 {
@@ -70,9 +70,10 @@
       margin-bottom: 1.5rem;
       font-weight: 600;
       font-size: 1.5rem;
+      letter-spacing: 0.5px;
     }
 
-    /* 🔹 Campos */
+    /* 🔹 Campo con icono */
     .input-group {
       position: relative;
       margin-bottom: 1.3rem;
@@ -108,7 +109,7 @@
     button {
       width: 100%;
       padding: 10px;
-      background: linear-gradient(90deg, #28a745, #34ce57);
+      background: linear-gradient(90deg, #007bff, #00c6ff);
       color: white;
       border: none;
       border-radius: 8px;
@@ -120,9 +121,9 @@
     }
 
     button:hover {
-      background: linear-gradient(90deg, #218838, #2ecc71);
+      background: linear-gradient(90deg, #0056b3, #0099ff);
       transform: scale(1.03);
-      box-shadow: 0 5px 20px rgba(40, 167, 69, 0.3);
+      box-shadow: 0 5px 20px rgba(0, 123, 255, 0.3);
     }
 
     a {
@@ -139,7 +140,7 @@
       text-decoration: underline;
     }
 
-    /* 💫 Animaciones de entrada */
+    /* 💫 Efecto de entrada de los campos */
     .input-group, button, a {
       opacity: 0;
       animation: slideIn 0.7s forwards;
@@ -161,7 +162,7 @@
         background: linear-gradient(135deg, #1b2735, #090a0f);
       }
 
-      .register-container {
+      .login-container {
         background: rgba(25, 25, 25, 0.85);
         color: #f0f0f0;
       }
@@ -182,7 +183,7 @@
       }
 
       button {
-        background: linear-gradient(90deg, #00c851, #007e33);
+        background: linear-gradient(90deg, #00c6ff, #007bff);
       }
 
       a {
@@ -192,7 +193,7 @@
 
     /* 📱 Responsividad */
     @media (max-width: 480px) {
-      .register-container {
+      .login-container {
         padding: 2rem 1.5rem;
         border-radius: 14px;
       }
@@ -217,17 +218,16 @@
 </head>
 <body>
 
-  <div class="register-container">
+  <div class="login-container">
     <!-- 🧠 Logo -->
     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Logo del sistema">
 
-    <h2>Crear nueva cuenta</h2>
+    <h2>Iniciar sesión</h2>
 
-    <form method="POST" action="registrar_usuario.php">
-
+    <form method="POST" action="validar_login.php">
       <!-- 👤 Usuario -->
       <div class="input-group">
-        <i class="fa-solid fa-user-plus"></i>
+        <i class="fa-solid fa-user"></i>
         <input type="text" name="usuario" placeholder="Usuario" required>
       </div>
 
@@ -237,17 +237,11 @@
         <input type="password" name="contrasena" placeholder="Contraseña" required>
       </div>
 
-      <!-- 🔐 Confirmar contraseña -->
-      <div class="input-group">
-        <i class="fa-solid fa-check-double"></i>
-        <input type="password" name="confirmar_contrasena" placeholder="Confirmar contraseña" required>
-      </div>
-
-      <button type="submit">Registrar</button>
+      <button type="submit">Ingresar</button>
     </form>
 
-    <!-- 🔗 Enlace al login -->
-    <a href="login.php">¿Ya tienes cuenta? Inicia sesión aquí</a>
+    <!-- 🔗 Enlace al registro -->
+    <a href="registrar.php">¿No tienes cuenta? Regístrate aquí</a>
   </div>
 
 </body>
