@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Administrador de Productos</title>
 
-  <!-- 🔹 Íconos de Font Awesome -->
+  <!-- Íconos de Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* 🌈 Fondo animado con gradiente */
     body {
-      font-family: 'Poppins', 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #007bff, #00c6ff, #4facfe);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
       background-size: 300% 300%;
       animation: gradientMove 8s ease infinite;
       display: flex;
@@ -30,7 +29,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* 🧩 Contenedor principal */
     .login-container {
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(12px);
@@ -54,7 +52,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 🖼️ Logo */
     .login-container img {
       width: 95px;
       margin-bottom: 1rem;
@@ -66,14 +63,13 @@
     }
 
     h2 {
-      color: #fdf9f9;
+      color: #333;
       margin-bottom: 1.5rem;
       font-weight: 600;
       font-size: 1.5rem;
       letter-spacing: 0.5px;
     }
 
-    /* 🔹 Campo con icono */
     .input-group {
       position: relative;
       margin-bottom: 1.3rem;
@@ -94,15 +90,24 @@
       width: 100%;
       padding: 10px 12px 10px 38px;
       border: 1px solid #ccc;
+      background: #111;        /* ← Fondo oscuro para todos */
+      color: #e0e0e0;           /* ← Texto claro para visibilidad */
       border-radius: 8px;
       font-size: 14px;
       transition: all 0.3s ease;
       box-sizing: border-box;
     }
 
+    /* Forzamos que en todos los dispositivos mantenga el fondo oscuro */
+    input, input:focus {
+      background-color: #111 !important;
+      color: #e0e0e0 !important;
+      -webkit-text-fill-color: #e0e0e0 !important; /* Para Safari */
+    }
+
     input:focus {
-      border-color: #007bff;
-      box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+      border-color: #00c6ff;
+      box-shadow: 0 0 8px rgba(0, 198, 255, 0.4);
       outline: none;
     }
 
@@ -132,7 +137,6 @@
       text-decoration: none;
       color: #007bff;
       font-size: 14px;
-      transition: color 0.3s;
     }
 
     a:hover {
@@ -140,58 +144,6 @@
       text-decoration: underline;
     }
 
-    /* 💫 Efecto de entrada de los campos */
-    .input-group, button, a {
-      opacity: 0;
-      animation: slideIn 0.7s forwards;
-    }
-
-    .input-group:nth-child(1) { animation-delay: 0.3s; }
-    .input-group:nth-child(2) { animation-delay: 0.5s; }
-    button { animation-delay: 0.7s; }
-    a { animation-delay: 0.9s; }
-
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* 🌙 Modo oscuro automático */
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: linear-gradient(135deg, #1b2735, #090a0f);
-      }
-
-      .login-container {
-        background: rgba(25, 25, 25, 0.85);
-        color: #f0f0f0;
-      }
-
-      input {
-        background: #222;
-        border-color: #444;
-        color: #f0f0f0;
-      }
-
-      input:focus {
-        border-color: #00c6ff;
-        box-shadow: 0 0 6px rgba(0, 198, 255, 0.4);
-      }
-
-      .input-group i {
-        color: #00c6ff;
-      }
-
-      button {
-        background: linear-gradient(90deg, #00c6ff, #007bff);
-      }
-
-      a {
-        color: #00c6ff;
-      }
-    }
-
-    /* 📱 Responsividad */
     @media (max-width: 480px) {
       .login-container {
         padding: 2rem 1.5rem;
@@ -219,19 +171,16 @@
 <body>
 
   <div class="login-container">
-    <!-- 🧠 Logo -->
     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Logo del sistema">
 
     <h2>Iniciar sesión</h2>
 
     <form method="POST" action="validar_login.php">
-      <!-- 👤 Usuario -->
       <div class="input-group">
         <i class="fa-solid fa-user"></i>
         <input type="text" name="usuario" placeholder="Usuario" required>
       </div>
 
-      <!-- 🔒 Contraseña -->
       <div class="input-group">
         <i class="fa-solid fa-lock"></i>
         <input type="password" name="contrasena" placeholder="Contraseña" required>
@@ -240,7 +189,6 @@
       <button type="submit">Ingresar</button>
     </form>
 
-    <!-- 🔗 Enlace al registro -->
     <a href="registrar.php">¿No tienes cuenta? Regístrate aquí</a>
   </div>
 
