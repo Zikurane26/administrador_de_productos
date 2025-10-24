@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Login - Administrador de Productos</title>
+
+  <!-- 🔹 Carga los íconos de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    /* 🌆 Fondo con gradiente elegante */
+    /* 🌆 Fondo con gradiente */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #007bff, #00c6ff);
@@ -30,7 +34,7 @@
       transform: translateY(-5px);
     }
 
-    /* 🖼️ Imagen o logo */
+    /* 🖼️ Logo */
     .login-container img {
       width: 100px;
       margin-bottom: 1rem;
@@ -41,19 +45,23 @@
       margin-bottom: 1.5rem;
     }
 
-    label {
-      display: block;
-      text-align: left;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #555;
+    /* 🔹 Campo con icono */
+    .input-group {
+      position: relative;
+      margin-bottom: 1.2rem;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: #007bff;
     }
 
     input {
-      display: block;
-      margin-bottom: 1.2rem;
       width: 100%;
-      padding: 10px;
+      padding: 10px 10px 10px 35px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 14px;
@@ -97,22 +105,29 @@
 <body>
 
   <div class="login-container">
-    <!-- 🔹 Aquí va tu imagen -->
+    <!-- 🧠 Logo -->
     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Logo del sistema">
 
     <h2>Iniciar sesión</h2>
 
     <form method="POST" action="validar_login.php">
-      <label>Usuario:</label>
-      <input type="text" name="usuario" required>
+      
+      <!-- 👤 Usuario -->
+      <div class="input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" name="usuario" placeholder="Usuario" required>
+      </div>
 
-      <label>Contraseña:</label>
-      <input type="password" name="contrasena" required>
+      <!-- 🔒 Contraseña -->
+      <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" name="contrasena" placeholder="Contraseña" required>
+      </div>
 
       <button type="submit">Ingresar</button>
     </form>
 
-    <!-- Enlace al registro -->
+    <!-- 🔗 Enlace al registro -->
     <a href="registrar.php">¿No tienes cuenta? Regístrate aquí</a>
   </div>
 
