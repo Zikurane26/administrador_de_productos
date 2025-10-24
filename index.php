@@ -43,7 +43,6 @@ echo "Hola mundo desde Docker 2<br>";
 
 require __DIR__ . '/vendor/autoload.php'; // Carga las dependencias de Composer
 
-use MongoDB\Client;
 
 // Obtén la URI de conexión desde variable de entorno
 $uri = getenv('MONGODB_URI') ?: 'mongodb+srv://Zikurane26:TKzk2LN9YsJxA9x2@cluster0.umwdkel.mongodb.net/test_db?retryWrites=true&w=majority&tls=true';
