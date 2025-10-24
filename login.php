@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Tu hoja de estilos -->
-  <link rel="stylesheet" href="estilos_login.css">
+  <link rel="stylesheet" href="estilo_login.css">
 </head>
 <body>
   <div class="login-container">
