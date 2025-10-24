@@ -1,6 +1,6 @@
 Hola mundo desde Docker
 <?php
-//require 'vendor/autoload.php'; // Carga el paquete de MongoDB si usas Composer
+require 'vendor/autoload.php'; // Carga el paquete de MongoDB si usas Composer
 
 use MongoDB\Client;
 
