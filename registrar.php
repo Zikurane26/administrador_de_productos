@@ -66,7 +66,7 @@
     }
 
     h2 {
-      color: #333;
+      color: #d5d5d5;
       margin-bottom: 1.5rem;
       font-weight: 600;
       font-size: 1.5rem;
