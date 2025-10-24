@@ -39,8 +39,7 @@ try {
 }
 
 
-<?php
-echo "Hola mundo desde Docker<br>";
+echo "Hola mundo desde Docker 2<br>";
 
 require __DIR__ . '/vendor/autoload.php'; // Carga las dependencias de Composer
 
