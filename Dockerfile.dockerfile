@@ -1,21 +1,21 @@
-# Imagen base de PHP con Apache
+# Usa una imagen oficial de PHP con Apache
 FROM php:8.2-apache
 
-# Instalar extensiones necesarias (por ejemplo para MongoDB)
+# Instala extensiones necesarias (incluye MongoDB)
 RUN apt-get update && apt-get install -y \
     libssl-dev \
     pkg-config \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb
 
-# Copiar tu código al contenedor
+# Copia el código al contenedor
 COPY . /var/www/html/
 
-# Exponer el puerto que usará Render
-EXPOSE 8080
-
-# Configurar Apache para usar el puerto que Render proporciona
+# Configura Apache para escuchar el puerto que Render asigna
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf
 
-# Activar módulos útiles
+# Expone el puerto de la app
+EXPOSE 8080
+
+# Activa módulos útiles de Apache
 RUN a2enmod rewrite
