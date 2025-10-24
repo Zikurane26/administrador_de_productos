@@ -2,17 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Login - Administrador de Productos</title>
-
-  <!-- Íconos (Font Awesome) -->
+  <title>Iniciar-Sesion</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Tu hoja de estilos -->
-  <link rel="stylesheet" href="estilo_login.css">
 </head>
 <body>
   <div class="login-container">
-    <img src="logo.png" alt="Logo" class="logo"> <!-- Puedes cambiar o borrar esta línea -->
+    <img src="logo.png" alt="Logo" class="logo"> <!-- Asegúrate que 'logo.png' esté en la misma carpeta -->
 
     <h2>Iniciar sesión</h2>
 
