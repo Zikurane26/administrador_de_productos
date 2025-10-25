@@ -23,9 +23,9 @@ class AuthController {
 
                 // Redirigir según el rol
                 if ($user['rol'] === 'profesor') {
-                    header('Location: /public/index.php?controller=Profesor&action=index');
+                    header('Location: /public/index.php?controller=Home&action=index');
                 } else {
-                    header('Location: /public/index.php?controller=Estudiante&action=index');
+                    header('Location: /public/index.php?controller=Home&action=index');
                 }
                 exit();
             } else {
