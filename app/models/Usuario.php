@@ -11,7 +11,7 @@ class Usuario {
 
         // usar la propiedad $this->db (NO $db)
         var_dump($this->db);
-        die();
+        //die();
         $this->collection = $this->db->selectCollection('usuarios');
     }
 
