@@ -7,7 +7,7 @@ class Usuario {
 
     public function __construct() {
         $this->db = Database::getInstance()->getDB();
-        $this->collection = $db->getCollection('usuarios');
+        $this->collection = $db->selectCollection('usuarios');
     }
 
     public function findByUsername($usuario) {
