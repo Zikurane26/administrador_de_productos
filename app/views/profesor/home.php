@@ -3,15 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Panel del Profesor</title>
+  <link rel="stylesheet" href="/public/css/profesor.css">
 </head>
 <body>
   <h1>👨‍🏫 Bienvenido, <?= htmlspecialchars($_SESSION['nombre']) ?></h1>
   <a href="/public/index.php?controller=Auth&action=logout">Cerrar sesión</a>
   <hr>
 
+  <!-- Sección de código de asistencia -->
+  <h2>Código de asistencia</h2>
+
+  <?php if (!empty($codigo_asistencia)): ?>
+      <p>Código actual: <span class="codigo"><?= htmlspecialchars($codigo_asistencia) ?></span></p>
+  <?php else: ?>
+      <p>No hay código activo actualmente.</p>
+  <?php endif; ?>
+
+  <form method="post" action="/public/index.php?controller=Asistencia&action=generarCodigo">
+      <button type="submit" class="boton">Generar nuevo código</button>
+  </form>
+
+  <hr>
+
+  <!-- Tabla de usuarios -->
   <h2>Usuarios registrados</h2>
   <?php if (!empty($usuarios)): ?>
-      <table border="1" cellpadding="5">
+      <table>
           <tr>
               <th>ID</th>
               <th>Usuario</th>
