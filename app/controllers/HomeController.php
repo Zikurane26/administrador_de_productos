@@ -8,12 +8,13 @@ class HomeController {
         var_dump($_SESSION['rol']);
         $usuario = $_SESSION['usuario'];
         $rol = $_SESSION['rol'];
+        echo "<pre>Buscando vista en: " . dirname(__DIR__) . '/views/estudiante/home.php' . "</pre>";
 
         // Cargar vista según el rol
         if ($rol === 'profesor') {
-            include __DIR__ . '/views/profesor/home.php';
+            include dirname(__DIR__) . '/views/profesor/home.php';
         } elseif ($rol === 'estudiante') {
-            include __DIR__ . '/views/estudiante/home.php';
+            include dirname(__DIR__) . '/views/estudiante/home.php';
         } else {
             echo "Rol no reconocido.";
         }
