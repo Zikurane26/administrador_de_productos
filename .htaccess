@@ -1,8 +1,10 @@
 # Evita listar directorios
 Options -Indexes
 
-# Redirige todo lo que no exista hacia index.php
+# Activa Rewrite
 RewriteEngine On
+
+# Si no es un archivo o directorio real, redirige todo al front controller
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^$ public/index.php [L]
+RewriteRule ^(.*)$ public/index.php [QSA,L]
