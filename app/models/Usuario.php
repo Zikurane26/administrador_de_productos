@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../core/Database.php';
 
 class Usuario {
+    private $db;
     private $collection;
 
     public function __construct() {
