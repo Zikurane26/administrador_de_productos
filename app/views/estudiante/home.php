@@ -9,7 +9,6 @@
 
   <a href="/public/index.php?controller=Auth&action=logout">Cerrar sesión</a>
   <hr>
-  <h1>👋 Bienvenido Estudiante, <?= htmlspecialchars($usuario) ?></h1>
 <hr>
 
   <h2>Ingresar código de asistencia</h2>
