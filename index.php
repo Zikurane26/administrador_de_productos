@@ -28,7 +28,7 @@ if (!isset($_SESSION['usuario'])) {
 
   $cursor = $collection->find();
 
-  echo "<h3>📦 Productos:</h3><ul>";
+  echo "<h3>Datos BD</h3><ul>";
   foreach ($cursor as $doc) {
       echo "<li>" . htmlspecialchars(json_encode($doc)) . "</li>";
   }
