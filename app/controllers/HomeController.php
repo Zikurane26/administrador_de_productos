@@ -5,15 +5,15 @@ class HomeController {
             header("Location: /app/views/auth/login.php");
             exit();
         }
-        var_dump($_SESSION['usuario']);
+        var_dump($_SESSION['rol']);
         $usuario = $_SESSION['usuario'];
         $rol = $_SESSION['rol'];
 
         // Cargar vista según el rol
         if ($rol === 'profesor') {
-            include __DIR__ . '/../views/profesor/home.php';
+            include __DIR__ . '../views/profesor/home.php';
         } elseif ($rol === 'estudiante') {
-            include __DIR__ . '/../views/estudiante/home.php';
+            include __DIR__ . '../views/estudiante/home.php';
         } else {
             echo "Rol no reconocido.";
         }
