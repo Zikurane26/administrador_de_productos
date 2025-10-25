@@ -5,7 +5,7 @@
   <title>Panel del Profesor</title>
 </head>
 <body>
-  <h1>👋 Bienvenido Profesor, <?= htmlspecialchars($usuario['nombre']) ?></h1>
+  <h1>Bienvenido Profesor, <?php echo htmlspecialchars($_SESSION['usuario']); var_dump($_SESSION['usuario']); ?> 👋</h1>
   <a href="/public/index.php?controller=Auth&action=logout">Cerrar sesión</a>
   <hr>
   
