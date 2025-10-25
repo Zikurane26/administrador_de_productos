@@ -12,7 +12,10 @@ class HomeController {
 
         // Cargar vista según el rol
         if ($rol === 'profesor') {
-            include dirname(__DIR__) . '/views/profesor/home.php';
+            // Obtener todos los usuarios
+            $usuarios = Usuario::getAll();
+            
+            require_once dirname(__DIR__) . '/views/profesor/home.php';
         } elseif ($rol === 'estudiante') {
             include dirname(__DIR__) . '/views/estudiante/home.php';
         } else {
