@@ -14,7 +14,6 @@ class HomeController {
         if ($rol === 'profesor') {
             // Obtener todos los usuarios
             $usuarios = Usuario::getAll();
-            
             require_once dirname(__DIR__) . '/views/profesor/home.php';
         } elseif ($rol === 'estudiante') {
             include dirname(__DIR__) . '/views/estudiante/home.php';
