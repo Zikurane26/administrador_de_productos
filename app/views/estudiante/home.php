@@ -5,11 +5,8 @@
   <title>Panel del Estudiante</title>
 </head>
 <body>
-  <h1>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']); var_dump($_SESSION['usuario']); ?> 👋</h1>
-  <a href="logout.php">Cerrar sesión</a>
-  <hr>
+  <h1>Bienvenido Estudiante, <?php echo htmlspecialchars($_SESSION['usuario']); var_dump($_SESSION['usuario']); ?> 👋</h1>
 
-  <h1>👋 Bienvenido Estudiante, <?= htmlspecialchars($usuario['nombre']); var_dump($_SESSION['usuario']);?></h1>
   <a href="/public/index.php?controller=Auth&action=logout">Cerrar sesión</a>
   <hr>
 
