@@ -8,8 +8,7 @@
   <h1>Bienvenido Estudiante, <?php echo htmlspecialchars($_SESSION['nombre']);?> 👋</h1>
 
   <a href="/public/index.php?controller=Auth&action=logout">Cerrar sesión</a>
-  <hr>
-<hr>
+  <br>
 
   <h2>Ingresar código de asistencia</h2>
   <form action="/public/index.php?controller=estudiante&action=marcarAsistencia" method="POST">
