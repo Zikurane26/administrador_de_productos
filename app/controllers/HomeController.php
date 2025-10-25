@@ -6,15 +6,16 @@ class HomeController {
             header("Location: /app/views/auth/login.php");
             exit();
         }
-        var_dump($_SESSION['rol']);
+
         $usuario = $_SESSION['usuario'];
         $rol = $_SESSION['rol'];
-        echo "<pre>Buscando vista en: " . dirname(__DIR__) . '/views/estudiante/home.php' . "</pre>";
 
         // Cargar vista según el rol
         if ($rol === 'profesor') {
-            // Obtener todos los usuarios
-            $usuarios = Usuario::getAll();
+            // Crear instancia del modelo y obtener todos los usuarios desde MongoDB
+            $usuarioModel = new Usuario();
+            $usuarios = $usuarioModel->getAll();
+
             require_once dirname(__DIR__) . '/views/profesor/home.php';
         } elseif ($rol === 'estudiante') {
             include dirname(__DIR__) . '/views/estudiante/home.php';
@@ -23,4 +24,3 @@ class HomeController {
         }
     }
 }
-

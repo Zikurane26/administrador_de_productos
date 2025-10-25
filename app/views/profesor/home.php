@@ -10,19 +10,23 @@
   <hr>
 
   <h2>Usuarios registrados</h2>
-  <table border="1" cellpadding="5">
-      <tr>
-          <th>ID</th>
-          <th>Usuario</th>
-          <th>Rol</th>
-      </tr>
-      <?php foreach ($usuarios as $user): ?>
+  <?php if (!empty($usuarios)): ?>
+      <table border="1" cellpadding="5">
           <tr>
-              <td><?= htmlspecialchars($user['_id']) ?></td>
-              <td><?= htmlspecialchars($user['usuario']) ?></td>
-              <td><?= htmlspecialchars($user['rol']) ?></td>
+              <th>ID</th>
+              <th>Usuario</th>
+              <th>Rol</th>
           </tr>
-      <?php endforeach; ?>
-  </table>
+          <?php foreach ($usuarios as $user): ?>
+              <tr>
+                  <td><?= htmlspecialchars($user['_id']) ?></td>
+                  <td><?= htmlspecialchars($user['usuario']) ?></td>
+                  <td><?= htmlspecialchars($user['rol']) ?></td>
+              </tr>
+          <?php endforeach; ?>
+      </table>
+  <?php else: ?>
+      <p>No hay usuarios registrados.</p>
+  <?php endif; ?>
 </body>
 </html>
