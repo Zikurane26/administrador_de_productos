@@ -12,20 +12,20 @@ class Usuario {
     }
 
     public function getAll()
-{
-    $cursor = $this->collection->find(); // Trae todos los documentos
-    $usuarios = [];
+    {
+        $cursor = $this->collection->find(); // Trae todos los documentos
+        $usuarios = [];
 
-    foreach ($cursor as $doc) {
-        $usuarios[] = [
-            '_id' => (string) $doc['_id'],
-            'usuario' => $doc['usuario'] ?? '',
-            'rol' => $doc['rol'] ?? 'estudiante',
-        ];
+        foreach ($cursor as $doc) {
+            $usuarios[] = [
+                '_id' => (string) $doc['_id'],
+                'usuario' => $doc['usuario'] ?? '',
+                'rol' => $doc['rol'] ?? 'estudiante',
+            ];
+        }
+
+        return $usuarios;
     }
-
-    return $usuarios;
-}
 
     public function findByUsername($usuario) {
         return $this->collection->findOne(['usuario' => $usuario]);

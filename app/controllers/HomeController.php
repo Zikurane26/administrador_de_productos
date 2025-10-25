@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../models/Usuario.php';
 class HomeController {
     public function index() {
         if (!isset($_SESSION['usuario'])) {
