@@ -38,7 +38,7 @@
     </form>
 
     <!-- 🔗 Enlace al registro -->
-    <a href="registrar.php">¿No tienes cuenta? Regístrate aquí</a>
+    <a href="/public/index.php?controller=Auth&action=register">¿No tienes cuenta? Regístrate aquí</a>
   </div>
 
 </body>
