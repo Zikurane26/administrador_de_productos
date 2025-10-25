@@ -6,8 +6,13 @@ class Usuario {
     private $collection;
 
     public function __construct() {
+        // obtener la instancia singleton y la DB
         $this->db = Database::getInstance()->getDB();
-        $this->collection = $db->selectCollection('usuarios');
+
+        // usar la propiedad $this->db (NO $db)
+        var_dump($this->db);
+        die();
+        $this->collection = $this->db->selectCollection('usuarios');
     }
 
     public function findByUsername($usuario) {
@@ -35,10 +40,10 @@ class Usuario {
     }
     public function crearUsuario($usuario, $contrasena, $rol = 'estudiante') {
     try {
-        $hashed = password_hash($contrasena, PASSWORD_DEFAULT);
+        $hash = password_hash($contrasena, PASSWORD_DEFAULT);
         $this->collection->insertOne([
             'usuario' => $usuario,
-            'contrasena' => $hashed,
+            'contrasena' => $hash,
             'rol' => $rol,
             'fecha_registro' => new MongoDB\BSON\UTCDateTime()
         ]);
