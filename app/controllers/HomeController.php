@@ -11,9 +11,9 @@ class HomeController {
 
         // Cargar vista según el rol
         if ($rol === 'profesor') {
-            include __DIR__ . '../views/profesor/home.php';
+            include __DIR__ . '/views/profesor/home.php';
         } elseif ($rol === 'estudiante') {
-            include __DIR__ . '../views/estudiante/home.php';
+            include __DIR__ . '/views/estudiante/home.php';
         } else {
             echo "Rol no reconocido.";
         }
