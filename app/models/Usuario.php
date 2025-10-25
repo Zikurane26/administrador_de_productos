@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../core/Database.php';
+require_once __DIR__ . '/../core/Database.php';
 
 class Usuario {
     private $collection;
@@ -21,6 +21,17 @@ class Usuario {
         return null;
     }
 
+    public function buscarPorUsuario($usuario) {
+        return $this->collection->findOne(['usuario' => $usuario]);
+    }
+
+    public function registrarUsuario($usuario, $contrasena) {
+        $hash = password_hash($contrasena, PASSWORD_DEFAULT);
+        return $this->collection->insertOne([
+            'usuario' => $usuario,
+            'contrasena' => $hash
+        ]);
+    }
     public function crearUsuario($usuario, $contrasena, $rol = 'estudiante') {
     try {
         $hashed = password_hash($contrasena, PASSWORD_DEFAULT);
