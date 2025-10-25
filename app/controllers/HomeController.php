@@ -5,7 +5,7 @@ class HomeController {
             header("Location: /app/views/auth/login.php");
             exit();
         }
-
+        var_dump($_SESSION['usuario']);
         $usuario = $_SESSION['usuario'];
         $rol = $_SESSION['rol'];
 
