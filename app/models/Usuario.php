@@ -5,7 +5,7 @@ class Usuario {
     private $collection;
 
     public function __construct() {
-        $this->db = Database::getInstance()->getConnection();
+        $this->db = Database::getInstance()->getDB();
         $this->collection = $db->getCollection('usuarios');
     }
 
