@@ -8,10 +8,6 @@ class Usuario {
     public function __construct() {
         // obtener la instancia singleton y la DB
         $this->db = Database::getInstance()->getDB();
-
-        // usar la propiedad $this->db (NO $db)
-        var_dump($this->db);
-        //die();
         $this->collection = $this->db->selectCollection('usuarios');
     }
 
