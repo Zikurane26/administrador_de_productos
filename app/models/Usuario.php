@@ -11,6 +11,13 @@ class Usuario {
         $this->collection = $this->db->selectCollection('usuarios');
     }
 
+    public static function getAll()
+    {
+        $db = Database::connect();
+        $query = $db->query("SELECT id, nombre, usuario, rol FROM usuarios");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function findByUsername($usuario) {
         return $this->collection->findOne(['usuario' => $usuario]);
     }
