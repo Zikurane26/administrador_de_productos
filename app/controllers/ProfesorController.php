@@ -1,6 +1,7 @@
 <?php
 
-require_once 'app/models/Usuario.php';
+require_once __DIR__ . '/../models/Usuario.php';
+
 
 class ProfesorController
 {
