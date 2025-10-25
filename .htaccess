@@ -1,0 +1,8 @@
+# Evita listar directorios
+Options -Indexes
+
+# Redirige todo lo que no exista hacia index.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^$ app/index.php [L]
