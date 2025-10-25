@@ -15,7 +15,7 @@ try {
     // Verifica si el usuario ya existe
     $existe = $usuarios->findOne(['usuario' => $usuario]);
     if ($existe) {
-        echo "<script>alert('El usuario ya existe.'); window.location='registrar.php';</script>";
+        echo "<script>alert('El usuario ya existe.'); window.location='register.php';</script>";
         exit();
     }
 

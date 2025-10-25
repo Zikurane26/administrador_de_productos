@@ -241,7 +241,7 @@
     </form>
 
     <!-- 🔗 Enlace al registro -->
-    <a href="registrar.php">¿No tienes cuenta? Regístrate aquí</a>
+    <a href="register.php">¿No tienes cuenta? Regístrate aquí</a>
   </div>
 
 </body>
