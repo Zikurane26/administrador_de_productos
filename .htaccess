@@ -1,13 +1,21 @@
+# /var/www/html/.htaccess  (archivo en la raíz del proyecto)
+
 # Evita listar directorios
 Options -Indexes
+
+# Indica el index por defecto (cuando se pide /)
+DirectoryIndex public/index.php
 
 # Activa Rewrite
 RewriteEngine On
 RewriteBase /
 
-# Si no es un archivo o directorio existente
+# No reescribir si ya apunta a la carpeta public (evita bucles)
+RewriteCond %{REQUEST_URI} !^/public/
+
+# Si la petición no corresponde a un fichero físico ni a un directorio
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Redirige todo al front controller
-RewriteRule ^(.*)$ public/index.php [L,QSA]
+# Reescribe internamente a public/index.php (no redirect público)
+RewriteRule ^(.*)$ /public/index.php [L,QSA]
