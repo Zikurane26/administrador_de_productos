@@ -3,8 +3,11 @@ Options -Indexes
 
 # Activa Rewrite
 RewriteEngine On
+RewriteBase /
 
-# Si no es un archivo o directorio real, redirige todo al front controller
+# Si no es un archivo o directorio existente
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ public/index.php [QSA,L]
+
+# Redirige todo al front controller
+RewriteRule ^(.*)$ public/index.php [L,QSA]
