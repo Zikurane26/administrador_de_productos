@@ -12,6 +12,10 @@ class HomeController {
 
         // Cargar vista según el rol
         if ($rol === 'profesor') {
+
+            // Redirigir al controlador de Profesor
+            header('Location: /public/index.php?controller=Profesor&action=index');
+            exit;
             // Crear instancia del modelo y obtener todos los usuarios desde MongoDB
             $usuarioModel = new Usuario();
             $usuarios = $usuarioModel->getAll();
